@@ -28,6 +28,10 @@
       "finance-news": {
         "threshold": 7.0,
         "topic_dedup": true
+      },
+      "policy-news": {
+        "threshold": 7.0,
+        "topic_dedup": true
       }
     }
   },
@@ -37,21 +41,21 @@
         "type": "user_events",
         "username": "karpathy",
         "enabled": true,
-        "profile": "tech-news"
+        "profile": "ai-creator"
       },
       {
         "type": "repo_releases",
         "owner": "vllm-project",
         "repo": "vllm",
         "enabled": true,
-        "profile": "tech-news"
+        "profile": "ai-creator"
       }
     ],
     "hackernews": {
       "enabled": true,
       "fetch_top_stories": 30,
       "min_score": 150,
-      "profile": "tech-news"
+      "profile": "ai-creator"
     },
     "rss": [
       {
@@ -59,14 +63,49 @@
         "url": "https://simonwillison.net/atom/everything/",
         "enabled": true,
         "category": "ai-tools",
-        "profile": "tech-news"
+        "profile": "ai-creator"
       },
       {
         "name": "GitHub Trending - Daily",
         "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml",
         "enabled": true,
         "category": "github-trending",
-        "profile": "tech-news"
+        "profile": "ai-creator"
+      },
+      {
+        "name": "CNBC Finance",
+        "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664",
+        "enabled": true,
+        "category": "finance",
+        "profile": "finance-news"
+      },
+      {
+        "name": "Federal Reserve Press Releases",
+        "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+        "enabled": true,
+        "category": "central-bank-policy",
+        "profile": ["finance-news", "policy-news"]
+      },
+      {
+        "name": "European Central Bank Press Releases",
+        "url": "https://www.ecb.europa.eu/rss/press.html",
+        "enabled": true,
+        "category": "central-bank-policy",
+        "profile": ["finance-news", "policy-news"]
+      },
+      {
+        "name": "AI Regulation News",
+        "url": "https://news.google.com/rss/search?q=artificial+intelligence+regulation+policy&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "ai-policy",
+        "profile": "policy-news"
+      },
+      {
+        "name": "China Financial Policy",
+        "url": "https://news.google.com/rss/search?q=China+financial+regulation+monetary+policy&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "china-policy",
+        "profile": ["finance-news", "policy-news"]
       }
     ],
     "reddit": {
@@ -89,7 +128,8 @@
       "tech-news",
       "ai-creator",
       "tech-blog",
-      "finance-news"
+      "finance-news",
+      "policy-news"
     ],
     "category_groups": {},
     "default_group": "other",
