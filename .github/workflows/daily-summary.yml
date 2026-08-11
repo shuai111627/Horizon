@@ -9,6 +9,8 @@ on:
 jobs:
   daily-summary:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
     permissions:
       contents: write
 
